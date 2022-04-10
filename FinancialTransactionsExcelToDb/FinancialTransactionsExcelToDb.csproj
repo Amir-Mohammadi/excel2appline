@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BB567EA-0AA9-4473-9AFB-719CE7022952}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FinancialTransactionsExcelToDb</RootNamespace>
+    <AssemblyName>FinancialTransactionsExcelToDb</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\ExcelFunctions.cs" />
+    <Compile Include="Common\TValue.cs" />
+    <Compile Include="Forms\AddProduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddProduction.Designer.cs">
+      <DependentUpon>AddProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddQtyCorrectionRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddQtyCorrectionRequest.Designer.cs">
+      <DependentUpon>AddQtyCorrectionRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddRialInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddRialInvoice.Designer.cs">
+      <DependentUpon>AddRialInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddWarehouseIssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddWarehouseIssue.Designer.cs">
+      <DependentUpon>AddWarehouseIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplyContradictions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplyContradictions.Designer.cs">
+      <DependentUpon>ApplyContradictions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CloseAllSerialBuffers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CloseAllSerialBuffers.Designer.cs">
+      <DependentUpon>CloseAllSerialBuffers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditPurchaseOrdersPrice2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditPurchaseOrdersPrice2.Designer.cs">
+      <DependentUpon>EditPurchaseOrdersPrice2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditPurchaseOrdersPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditPurchaseOrdersPrice.Designer.cs">
+      <DependentUpon>EditPurchaseOrdersPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\JahedForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\JahedForm2.Designer.cs">
+      <DependentUpon>JahedForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LinkSerials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LinkSerials.Designer.cs">
+      <DependentUpon>LinkSerials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QualityControlTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QualityControlTest.Designer.cs">
+      <DependentUpon>QualityControlTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SaveStuffBasePrice2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SaveStuffBasePrice2.Designer.cs">
+      <DependentUpon>SaveStuffBasePrice2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SaveStuffBasePrice3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SaveStuffBasePrice3.Designer.cs">
+      <DependentUpon>SaveStuffBasePrice3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AcceptQtyCorrectionRequestInput.cs" />
+    <Compile Include="Models\AddComputionalStuffBasePriceInput.cs" />
+    <Compile Include="Models\AddConstantStuffBasePriceInput.cs" />
+    <Compile Include="Models\AddDetemineLinkForSerialInput.cs" />
+    <Compile Include="Models\AddFinancialDocumentInput.cs" />
+    <Compile Include="Models\AddFinancialDocumentInput2.cs" />
+    <Compile Include="Models\AddFinancialDocumentTransferInput.cs" />
+    <Compile Include="Models\AddLinkSerialInput.cs" />
+    <Compile Include="Models\AddProductionInput.cs" />
+    <Compile Include="Models\AddProductionOperationInput.cs" />
+    <Compile Include="Models\AddPurchaseOrderFinancingInput.cs" />
+    <Compile Include="Models\AddPurchaseOrderInput.cs" />
+    <Compile Include="Models\AddQtyCorrectionRequestInput.cs" />
+    <Compile Include="Models\AddQualityControlTestInput.cs" />
+    <Compile Include="Models\AddRepairProductionStuffDetailInput.cs" />
+    <Compile Include="Models\AddRialInvoiceInput.cs" />
+    <Compile Include="Models\AddStuffBasePriceCustomsInput.cs" />
+    <Compile Include="Models\AddStuffBasePriceTransportInput.cs" />
+    <Compile Include="Models\AddStuffQualityControlTestConditionInput.cs" />
+    <Compile Include="Models\AddStuffQualityControlTestDocument.cs" />
+    <Compile Include="Models\AddTestConditionInput.cs" />
+    <Compile Include="Models\AddWarehouseIssueInput.cs" />
+    <Compile Include="Models\AddWarehouseIssueItemInput.cs" />
+    <Compile Include="Models\AdvanceSearchItem.cs" />
+    <Compile Include="Models\CellLocation.cs" />
+    <Compile Include="Models\CloseSerialBufferInput.cs" />
+    <Compile Include="Models\ConfirmationStatus.cs" />
+    <Compile Include="Models\CorrectSerialWarehouseInventoryInput.cs" />
+    <Compile Include="Models\CorrectWarehouseInventoriesInput.cs" />
+    <Compile Include="Models\DeletePurchaseOrderFinancingInput.cs" />
+    <Compile Include="Models\DeleteStuffQualityControlTestConditionInput.cs" />
+    <Compile Include="Models\DeleteTestConditionInput.cs" />
+    <Compile Include="Models\EditPurchaseOrderInput.cs" />
+    <Compile Include="Models\EditQualityControlTestInput.cs" />
+    <Compile Include="Models\EditStuffQualityControlTestDocument.cs" />
+    <Compile Include="Models\FinancialDocumentType.cs" />
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FullProductionOrderResult.cs" />
+    <Compile Include="Models\GetFinancialAccountSummaryInput.cs" />
+    <Compile Include="Models\GetProductionOrderInput.cs" />
+    <Compile Include="Models\GetPurchaseOrderInput.cs" />
+    <Compile Include="Models\GetPurchaseOrdersInput.cs" />
+    <Compile Include="Models\GetQualityControlTestsInput.cs" />
+    <Compile Include="Models\GetQualityControlTestUnitsInput.cs" />
+    <Compile Include="Models\GetReceiptsInput.cs" />
+    <Compile Include="Models\GetSerialBuffersInput.cs" />
+    <Compile Include="Models\GetStockTakingVariancesInput.cs" />
+    <Compile Include="Models\GetStuffSerialInput.cs" />
+    <Compile Include="Models\GetStuffsInput.cs" />
+    <Compile Include="Forms\JahedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\JahedForm.Designer.cs">
+      <DependentUpon>JahedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTestConditionsInput.cs" />
+    <Compile Include="Models\GetWarehouseInventoriesInput.cs" />
+    <Compile Include="Models\GetWarehouseIssuesInput.cs" />
+    <Compile Include="Models\LoginInput.cs" />
+    <Compile Include="Models\LoginResult.cs" />
+    <Compile Include="Models\PagingInput.cs" />
+    <Compile Include="Models\PaymentMethods.cs" />
+    <Compile Include="Models\ProductionOrderResult.cs" />
+    <Compile Include="Models\ProductionOrderStatus.cs" />
+    <Compile Include="Models\ProductionStuffDetailType.cs" />
+    <Compile Include="Models\PurchaseOrderDetailInput.cs" />
+    <Compile Include="Models\PurchaseOrderResult.cs" />
+    <Compile Include="Models\PurchaseOrderStatus.cs" />
+    <Compile Include="Models\PurchaseOrderType.cs" />
+    <Compile Include="Models\QtyCorrectionRequestResult.cs" />
+    <Compile Include="Models\QtyCorrectionRequestStatus.cs" />
+    <Compile Include="Models\QtyCorrectionRequestType.cs" />
+    <Compile Include="Models\QualityControlTestConditionResult.cs" />
+    <Compile Include="Models\QualityControlTestResult.cs" />
+    <Compile Include="Models\QualityControlTestSortType.cs" />
+    <Compile Include="Models\QualityControlTestUnitResult.cs" />
+    <Compile Include="Models\QualityControlTestUnitSortType.cs" />
+    <Compile Include="Models\ReceiptResult.cs" />
+    <Compile Include="Models\ReceiptSortType.cs" />
+    <Compile Include="Models\ReceiptStatus.cs" />
+    <Compile Include="Models\RejectWarehouseIssueInput.cs" />
+    <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\ResultList.cs" />
+    <Compile Include="Models\SaveStuffQualityControlTestsInput.cs" />
+    <Compile Include="Models\SearchInput.cs" />
+    <Compile Include="Models\SerialBufferResult.cs" />
+    <Compile Include="Models\SerialBufferSortType.cs" />
+    <Compile Include="Models\SortInput.cs" />
+    <Compile Include="Models\StockCheckingTagStatus.cs" />
+    <Compile Include="Models\StockTakingVarianceResult.cs" />
+    <Compile Include="Models\StockTakingVarianceSortType.cs" />
+    <Compile Include="Models\StuffBasePriceCustomsType.cs" />
+    <Compile Include="Models\StuffBasePriceTransportComputeType.cs" />
+    <Compile Include="Models\StuffBasePriceTransportType.cs" />
+    <Compile Include="Models\StuffDefinitionStatus.cs" />
+    <Compile Include="Models\StuffSerialResult.cs" />
+    <Compile Include="Models\StuffSerialStatus.cs" />
+    <Compile Include="Models\StuffSortType.cs" />
+    <Compile Include="Models\StuffType.cs" />
+    <Compile Include="Models\TestConditionResult.cs" />
+    <Compile Include="Models\TestConditionSortType.cs" />
+    <Compile Include="Models\ToleranceType.cs" />
+    <Compile Include="Models\TransactionLevel.cs" />
+    <Compile Include="Models\WarehouseInventoryResult.cs" />
+    <Compile Include="Models\WarehouseInventorySortType.cs" />
+    <Compile Include="Models\WarehouseIssueResult.cs" />
+    <Compile Include="Models\WarehouseIssueSortType.cs" />
+    <Compile Include="Models\WarehouseIssueStatusType.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\ResultMessage.cs" />
+    <Compile Include="Forms\SaveStuffBasePrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SaveStuffBasePrice.Designer.cs">
+      <DependentUpon>SaveStuffBasePrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StuffResult.cs" />
+    <EmbeddedResource Include="Forms\AddProduction.resx">
+      <DependentUpon>AddProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddQtyCorrectionRequest.resx">
+      <DependentUpon>AddQtyCorrectionRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddRialInvoice.resx">
+      <DependentUpon>AddRialInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddWarehouseIssue.resx">
+      <DependentUpon>AddWarehouseIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplyContradictions.resx">
+      <DependentUpon>ApplyContradictions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CloseAllSerialBuffers.resx">
+      <DependentUpon>CloseAllSerialBuffers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditPurchaseOrdersPrice2.resx">
+      <DependentUpon>EditPurchaseOrdersPrice2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditPurchaseOrdersPrice.resx">
+      <DependentUpon>EditPurchaseOrdersPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JahedForm2.resx">
+      <DependentUpon>JahedForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JahedForm.resx">
+      <DependentUpon>JahedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LinkSerials.resx">
+      <DependentUpon>LinkSerials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QualityControlTest.resx">
+      <DependentUpon>QualityControlTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SaveStuffBasePrice2.resx">
+      <DependentUpon>SaveStuffBasePrice2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SaveStuffBasePrice3.resx">
+      <DependentUpon>SaveStuffBasePrice3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\SaveStuffBasePrice.resx">
+      <DependentUpon>SaveStuffBasePrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
